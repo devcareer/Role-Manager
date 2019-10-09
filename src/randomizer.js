@@ -1,11 +1,10 @@
 /*
-  This is a pseudo test for randomizer.js
+  Usage for randomizer.js
   steps:
      * import randomizer.js module --this return a new instance of Randomizer
      * call setArr() method on the randomizer object with an array parameter
      * call pop() method on the randomizer object to get a random element from the array
      *
-  Note: The process of re-initializing the array is well handled. No need to worry about that again
  */
 
 let mainArr = [];
@@ -24,7 +23,8 @@ class Randomizer {
   }
 
   pop(){
-    if(mainArr.length == 0 && backUpArr.length == 0) throw new Error('Empty Array. First set an array Object');
+    if(mainArr.length == 0 && backUpArr.length == 0)
+      throw new Error('Empty Array. First set an array Object');
     if(mainArr.length == 0){
       let temp = backUpArr;
       backUpArr = mainArr;

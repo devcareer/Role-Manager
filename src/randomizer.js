@@ -20,9 +20,11 @@ class Randomizer {
       throw new Error('Parameter must be an array');
     }
     mainArr = arr;
+    backUpArr = [];
   }
 
   pop(){
+    if(mainArr.length == 0 && backUpArr.length == 0) throw new Error('Empty Array. First set an array Object');
     if(mainArr.length == 0){
       let temp = backUpArr;
       backUpArr = mainArr;

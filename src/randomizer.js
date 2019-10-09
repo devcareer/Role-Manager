@@ -25,11 +25,8 @@ class Randomizer {
   pop(){
     if(mainArr.length == 0 && backUpArr.length == 0)
       throw new Error('Empty Array. First set an array Object');
-    if(mainArr.length == 0){
-      let temp = backUpArr;
-      backUpArr = mainArr;
-      this.setArr(temp);
-    }
+    if(mainArr.length == 0)
+      this.setArr(backUpArr);
     let leaderIndex = Math.floor(Math.random() * mainArr.length);
     let leader = mainArr.splice(leaderIndex, 1)[0];
     backUpArr.push(leader);

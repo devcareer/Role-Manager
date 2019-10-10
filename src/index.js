@@ -20,6 +20,9 @@ app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+import userRoutes from '../src/routes/usersRoutes'
+app.use('/users',userRoutes)
+
 app.get('/', (req, res) => {
   res.status(200).json({
     status: 'success',

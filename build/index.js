@@ -30,6 +30,10 @@ app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true
 }));
+
+var userRoutes = require('./routes/usersRoutes');
+
+app.use('users', userRoutes);
 app.get('/', function (req, res) {
   res.status(200).json({
     status: 'success',
